@@ -164,4 +164,19 @@ public class LimelightSubsystem extends SubsystemBase {
   public void setCameraposeRobotspace(double[] camPose) {
     table.getEntry("camerapose_robotspace_set").setDoubleArray(camPose);
   }
+
+  /*
+  I am using this place to organize my thoughts on how I(James) plan to use LimeLight(LL) for our robot.
+  I find it difficult to imagine how to get the robot moving in a line without the controller input, so I want to use "auto" movement.
+  By auto movement I am talking about the path creator we use in our autos.
+  For the basics I think we could use just 2 points for the pathing, them being the starting pos and the end pos(where the april tag is).
+  Of course, the end pos wont be exactly on the april tag (collision = bad).
+  When this is further developed and we know what the new map looks like I want to have the option of having "smart" pathing.
+  With the knowledge of what obstacles to avoid it should be possible to create certain areas that the pathing shouldn't cross.
+  I am not advanced enough in programming knowledge for this, but I believe it would be beneficial to have this option.
+  With the press of a button you can have the robot automatically create a pathing that avoids obstacles and reaches the tag with optimal movements.
+
+  feel free to write comments underneath to give suggestions (if anyone actually reads this)
+   */
+
 }
