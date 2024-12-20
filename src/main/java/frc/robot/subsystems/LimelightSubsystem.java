@@ -134,20 +134,30 @@ public class LimelightSubsystem extends SubsystemBase {
     return new Pose2d(poseArray[0], poseArray[1], Rotation2d.fromDegrees(poseArray[5]));
   }
 
+  //gets april tag ID
   public int getAprilTagID() {
     return (int) tid.getDouble(0.0);
   }
 
+  //gets the horizontal distance of the april tag
   public double getAprilTagX() {
     return tx.getDouble(0.0);
   }
 
+  //gets the height of the april tag
   public double getAprilTagY() {
     return ty.getDouble(0.0);
   }
 
+  //gets april tag area
+  //could potentially be used to get the distance of april tag from robot using math
   public double getAprilTagArea() {
     return ta.getDouble(0.0);
+  }
+
+  //checks if the april tag is what program is looking for
+  public boolean checkAprilTagID(int ID) {
+    return getAprilTagID() == ID;
   }
 
   // Set the pose of the camera relative to the robot. Can also be set in web interface
