@@ -36,6 +36,7 @@ public class TeleopCmd extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    //Cont = Controller
     double ContX = deadzone(controller.getRawAxis(DriveConstants.kDriveX)) * -1;
     double ContY = deadzone(controller.getRawAxis(DriveConstants.kDriveY)) * -1;
     double ContRotate = deadzone(controller.getRawAxis(DriveConstants.kDriveRotate)) * -1;
