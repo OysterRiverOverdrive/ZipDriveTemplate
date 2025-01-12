@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.auto.*;
-// import frc.robot.auto.plans.*;
+import frc.robot.auto.plans.*;
 import frc.robot.commands.TeleopCmd;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.utils.ControllerUtils;
@@ -40,12 +40,14 @@ public class RobotContainer {
           drivetrain,
           () -> cutil.Boolsupplier(Controllers.ps4_LB, DriveConstants.joysticks.DRIVER));
 
+  private final navxrun navxrun = new navxrun(drivetrain);
+
   public RobotContainer() {
     // Declare default command during Teleop Period as TeleopCmd(Driving Command)
     drivetrain.setDefaultCommand(teleopCmd);
 
     // Add Auto options to dropdown and push to dashboard
-    m_chooser.setDefaultOption("Auto[Rename Me]", auto1);
+    m_chooser.setDefaultOption("Navx", auto1);
     m_chooser.addOption("Auto[Rename Me]", auto2);
     m_chooser.addOption("Auto[Rename Me]", auto3);
     m_chooser.addOption("Auto[Rename Me]", auto4);
@@ -77,7 +79,7 @@ public class RobotContainer {
     switch (m_chooser.getSelected()) {
       default:
       case auto1:
-        break;
+        return navxrun;
       case auto2:
         break;
       case auto3:
