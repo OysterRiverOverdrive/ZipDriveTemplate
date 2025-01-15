@@ -12,6 +12,11 @@ jobs:
     # https://hub.docker.com/r/wpilib/roborio-cross-ubuntu/tags
     container: wpilib/roborio-cross-ubuntu:2023-22.04
 
+    # Give Permissions
+    permissions:
+      contents: read
+      actions: write
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -30,6 +35,11 @@ jobs:
     # Versions can be seen in:
     # https://hub.docker.com/r/wpilib/roborio-cross-ubuntu/tags
     container: wpilib/roborio-cross-ubuntu:2023-22.04
+
+    # Give Permissions
+    permissions:
+      contents: read
+      actions: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
